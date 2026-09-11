@@ -3,67 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio</title>
+    <title>Fake Portfolio Template</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Initial Loading Screen -->
-    <div id="loading-screen" role="progressbar">
+    <!-- Loading Screen -->
+    <div id="loading-screen" role="progressbar" aria-label="Loading portfolio">
         <div class="loading-spinner"></div>
-        <p class="loading-text">git init...</p>
+        <p class="loading-text">system init...</p>
     </div>
 
-    <!-- Matrix Rain / Canvas Background -->
-    <canvas id="matrix-rain"></canvas>
+    <!-- Matrix Rain Effect -->
+    <div class="matrix-rain" id="matrix-rain"></div>
 
-    <!-- Theme Switcher Button -->
-    <button class="theme-switch" id="theme-toggle" aria-label="Toggle theme">
-        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg>
+    <!-- Theme switcher -->
+    <button class="theme-switch" aria-label="Toggle dark/light theme">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
     </button>
 
-    <!-- Main Container -->
-    <div class="container content-hidden" id="main-content">
+    <div class="container" id="main-content">
+        <!-- HEADER -->
         <header>
-            <img src="assets/profile.jpg" alt="Profile Picture" class="profile-img">
-            <h1 id="user-name">Your Name</h1>
-            <p class="tagline">Full-Stack Engineer & Open Source Contributor</p>
-            <div class="social-links" id="social-links"></div>
+            <img src="https://via.placeholder.com/150" alt="Fake Profile" class="profile-img">
+            <h1>Jane Doe</h1>
+            <p class="tagline">Creative Technologist & Pixel Architect</p>
+            <div class="social-links" role="navigation">
+                <a href="#" class="social-btn">GitHub</a>
+                <a href="#" class="social-btn">LinkedIn</a>
+            </div>
         </header>
 
-        <section class="about" id="about-section"></section>
-
-        <section class="featured-projects">
-            <h2>Featured Projects</h2>
-            <div class="featured-projects-grid" id="featured-projects-grid"></div>
+        <!-- ABOUT -->
+        <section class="about" aria-label="About me">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </section>
 
-        <section class="projects-on-github">
-            <h2>GitHub Repositories</h2>
+        <!-- ACHIEVEMENTS -->
+        <section class="achievements" aria-label="Achievements">
+            <h2>Milestones</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <h3>🏆 Best UI/UX Award</h3>
+                    <p>Global Tech Hackathon 2024</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>🚀 10k+ Downloads</h3>
+                    <p>Open Source Library Package</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section class="featured-projects" aria-label="Featured projects">
+            <h2>Featured Work</h2>
+            <div class="featured-projects-grid" id="featured-projects-grid">
+                <!-- Hardcoded Fake Project -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x150" alt="Project Thumbnail">
+                    <h3>Project Alpha</h3>
+                    <p>A revolutionary tool for making placeholder text look incredibly convincing. Built with React and Node.js.</p>
+                    <a href="#" class="project-link">View Case Study →</a>
+                </div>
+                <!-- Hardcoded Fake Project -->
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/300x150" alt="Project Thumbnail">
+                    <h3>Nexus Dashboard</h3>
+                    <p>Real-time analytics dashboard rendering millions of fake data points perfectly.</p>
+                    <a href="#" class="project-link">Live Demo →</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- EXPERIENCE -->
+        <section class="experience" aria-label="Professional experience">
+            <h2>Experience</h2>
+            <div class="experience-card">
+                <h3>Senior Engineer @ FakeCorp</h3>
+                <span class="date">2022 - Present</span>
+                <p>Architected a highly scalable lorem ipsum generator that increased productivity by 400%.</p>
+            </div>
+            <div class="experience-card">
+                <h3>Frontend Dev @ Sandbox LLC</h3>
+                <span class="date">2019 - 2022</span>
+                <p>Designed UI components and wrote thousands of lines of code that do absolutely nothing.</p>
+            </div>
+        </section>
+
+        <!-- FAKE API PROJECTS GRID -->
+        <section class="projects-on-github" aria-label="GitHub projects">
+            <h2>Recent Repositories</h2>
             <div id="projects" class="projects-grid">
-                <div class="loading">Loading projects...</div>
+                <!-- This will be populated by the JS script below using fake data -->
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="skills" aria-label="Skills">
+            <h2>Tech Stack</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Cyber-Hacking</span>
             </div>
         </section>
     </div>
 
-    <!-- Floating AI Chatbot -->
-    <div id="chat-container" class="chat-container">
-        <button id="chat-toggle" class="chat-toggle" aria-label="Toggle chat">💬</button>
-        <div id="chat-widget" class="chat-widget hidden">
-            <div class="chat-header">
-                <h3>AI ASSISTANT</h3>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-tagline">Building the web, one div at a time.</div>
+            <div class="footer-bottom">
+                <div class="footer-built-with">© 2026 Jane Doe Template</div>
             </div>
-            <div id="chat-messages" class="chat-messages">
-                <div class="message bot">> SYSTEM INITIALIZED<br>> Ask me about my skills or projects!</div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot (Anonymized) -->
+    <div id="chat-container" class="chat-container">
+        <div class="ai-cloud">
+            <div class="ai-cloud-text">Talk to me</div>
+        </div>
+        
+        <button id="chat-toggle" class="chat-toggle" aria-label="Toggle chat">💬</button>
+        
+        <div id="chat-widget" class="chat-widget" role="dialog" aria-labelledby="chat-heading">
+            <div class="chat-header">
+                <h3 id="chat-heading">SYSTEM ASSISTANT</h3>
+            </div>
+            <div id="chat-messages" class="chat-messages" role="log" aria-live="polite">
+                <div class="message bot">
+                    <div class="message-content">
+                        > SYSTEM INITIALIZED<br>
+                        > Hello World!<br>
+                        > I am a placeholder AI assistant.<br>
+                        > Ask me a fake question!
+                    </div>
+                </div>
             </div>
             <div class="chat-input-area">
-                <input type="text" id="chat-input" placeholder="Enter command...">
-                <button id="chat-send">Send</button>
+                <input type="text" id="chat-input" class="chat-input" placeholder="Type a command...">
+                <button id="chat-send" class="chat-send" aria-label="Send message">Send</button>
             </div>
         </div>
     </div>
-
-    <script type="module" src="js/main.js"></script>
+    
+    <script src="js/main.js"></script>
 </body>
 </html>
